@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+$bg_color: #d2b48c;
+$btn1color: #00a74a;
+$btn1_on_color: lighten($btn1color, 25);
+$btn2color: #9f0f17;
+$btn2_on_color: lighten($btn2color, 25);
+$btn3color: #cca707;
+$btn3_on_color: lighten($btn3color, 25);
+$btn4color: #094a8f;
+$btn4_on_color: lighten($btn4color, 25);
+$centercolor: #d3d3d3;
+$simon_size: 400px;
+$count_txt_color: #f00;
+$count_bg_color: #222;
+$simon_border_color: #222;
+$simon_border_width: 26px;
+$center_size: 200px;
+$title_size: 48px;
+$title_font: 'Patua One', serif;
+$label_font: 'Oswald', sans-serif;
+$count_font: 'VT323', monospace;
+$small_btn_size: 16px;
+$simon_shadow_blur: 36px;
+$simon_shadow_alpha: 0.3;
+$count_width: 36px;
+$count_height: 24px;
+$strict_ind_size: 8px;
+$strict_off_color: #300;
+$strict_on_color: #d00;
+$title_color: #171717;
+$label_color: #171717;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
+}
+
+@mixin btnpos($l, $t) {
+  position: absolute;
+  left: $l;
+  top: $t;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg_color;
+  text-align: center;
+}
+
+#simon {
+  position: absolute;
+  left: calc(50% - #{$simon_size / 2} - #{$simon_border_width});
+  top: calc(50vh - #{$simon_size / 2} - #{$simon_border_width});
+  width: $simon_size;
+  height: $simon_size;
+  background-color: $simon_border_color;
+  border: $simon_border_width solid $simon_border_color;
+  margin-left: auto;
+  margin-right: auto;
+  @include box-shadow(0, 0, $simon_shadow_blur, rgba(0,0,0,$simon_shadow_alpha));
+}
+
+.btn {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#btn1 {
+  background-color: $btn1color;
+  @include border-radius(100% 0 0 0);
+  &.on {
+    background-color: $btn1_on_color;
+  }
+}
+
+#btn2{
+  background-color: $btn2color;
+  @include border-radius(0 100% 0 0);
+  float:right;
+  &.on {
+    background-color: $btn2_on_color;
+  }
+}
+
+#btn3{
+  background-color: $btn3color;
+  @include border-radius(0 0 0 100%);
+  &.on {
+    background-color: $btn3_on_color;
+  }
+}
+
+#btn4{
+  background-color: $btn4color;
+  @include border-radius(0 0 100% 0);
+  float:right;
+  &.on {
+    background-color: $btn4_on_color;
+  }
+}
+
+#center{
+  z-index: 5;
+  position: absolute;
+  top: calc(50vh - #{$center_size / 2} - #{$simon_border_width});
+  left: calc(50% - #{$center_size / 2} - #{$simon_border_width});
+  width: $center_size;
+  height: $center_size;
+  background-color:$centercolor;
+  border: $simon_border_width solid $simon_border_color;
+  overflow: hidden;
+}
+
+#title {
+  font-size: $title_size;
+  font-family: $title_font;
+  margin-bottom: 0;
+  color: $title_color;
+}
+
+#center-conts {
+  width: 85%;
+  height: $center_size - $title_size - 36px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-cont {
+  display: inline-block;
+  margin: 8px;
+}
+
+.label {
+  font-family: $label_font;
+  color: $title_color;
+}
+
+#count {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  padding-top: ($count_height - 20px) / 2;
+  width: $count_width;
+  height: $count_height;
+  border-radius: 2px;
+  color: $count_txt_color;
+  background-color: $count_bg_color;
+  font-family: $count_font;
+}
+
+.small-btn {
+  width: $small_btn_size;
+  height: $small_btn_size;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  cursor: pointer;
+  @include box-shadow(0, 0, 5px, rgba(0,0,0,0.5));
+}
+
+#strict-ind {
+  width: $strict_ind_size;
+  height: $strict_ind_size;
+  background-color: $strict_off_color;
+  &.on {
+    background-color: $strict_on_color;
+    @include box-shadow(0, 0, 4px, $strict_on_color);
+  }
+}
+
+#hborder {
+  position: absolute;
+  top: calc(50% - #{$simon_border_width / 2});
+  left: calc(50% - #{$simon_size / 2} - #{$simon_border_width});
+  width: $simon_size  + ($simon_border_width * 2);
+  height: $simon_border_width;
+  background-color: $simon_border_color;
+}
+
+#vborder {
+  position: absolute;
+  top: calc(50vh - #{$simon_size / 2} - #{$simon_border_width});
+  left: calc(50% - #{$simon_border_width / 2});
+  height: $simon_size + ($simon_border_width * 2);
+  width: $simon_border_width;
+  background-color: $simon_border_color;
+}
+
+.circle {
+  @include border-radius(100%);
+}
+
+audio, .sound{
+  display: none;
+}
