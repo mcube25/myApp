@@ -193,7 +193,10 @@ var b = true;
 var c = 789;
 a = 'test2';
 
-
+const a = 'test';
+const b = 'true';
+const c = '789';
+test a = 'test2';
 // Destructuring
 var person = {
     firstName : "John",
@@ -290,3 +293,23 @@ const whereAmI = (username, location) => {
         return "I am totally lost!";
     }
 }
+const first =()=> {
+    const greet= 'helloo';
+    const second= ()=>{
+        alert(greet);
+    }
+    return second
+}
+const newFunc = first();
+newFunc();
+// closures - a function ran , the function executed, its never going to run again.
+// ut its going to remember there r references to  those variales
+// so that d child scope always has access to the parent scope;
+//currying
+const multiply =(a, b) => a * b;
+const curriedMultiply = (a) => (b) => a*b;
+curriedMultiply(3);
+const multiplyBy5 = curriedMultiply(5);
+//compose
+const compost = (f, g) => (a) => f|g(a);
+
