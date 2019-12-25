@@ -20,7 +20,7 @@ const object4 = {
         console.log(this);
     }
 }
-//instantiation: it is a situation when youu make a copy of an objectn reuse d code
+//instantiation: it is a situation when youu make a copy of an object n reuse d code
 class player{
     constructor(name, type){
         console.log(this);
@@ -90,7 +90,7 @@ if (1){
 const object1 = { a: 5 }; //4
 const object2 = object1;  //4
 const object3 = object2; //4
-const object4 = { a: 5}; //4
+const object4 = { a: 5}; //5
 object1.a = 4;
 
 
@@ -115,6 +115,32 @@ class Mamal extends Animal{
 // create a cow that accepts a name, type and color and has a sound method that moo's her name, type and color.
         const cow = new Mamal('Shelly', 'cow', 'brown');
 
+//es7 new syntax
+.includes()
+const pets = ['dog','cats',,'mouse']
+pets.includes('dog')
+//exponential operator
+const square = (x) => x**3
+square(6);
+//es8 syntax
+// Solve the below problems:
 
+// #1) Check if this array includes the name "John".
+const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
 
+dragons.includes('John') // false
+
+// #2) Check if this array includes any name that has "John" inside of it. If it does, return that
+// name or names in an array.
+const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
+
+dragons.filter(name => name.includes('John')) // ['Johnathan']
+
+// #3) Create a function that calulates the power of 100 of a number entered as a parameter
+const power100 = (num)=> num**100;
+
+// #4) Useing your function from #3, put in the paramter 10000. What is the result?
+// Research for yourself why you get this result.
+
+power100(10000) // Infinity
 
