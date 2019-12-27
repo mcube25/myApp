@@ -15,5 +15,6 @@
                     for (item in detailedBasket){
                    console.log(item);
                };
+               const u = a;
                
 
