@@ -83,3 +83,36 @@ function checkBasket(basket, lookingFor) {
   }
   return 'that does not exist in your basket'
 }
+// how to debug javascript code
+const flattened = [[0, 1],[2, 3],[4,5]].reduce     ((accumulator, array) => accumulator.concat(array),[]);
+//instead of using console.log u can use debugger
+//check w3 schools for deubgger
+
+
+//hhow js work
+//explain d differences btw asynchronous and synchronous
+// js is a single threaded language that can be non blocking
+//a program sould b able to allocate memory and parse and execute code
+//synchronous  means d stack dealing with code one line at a time
+const a = 1;
+//callstack executes our code(first  in last out)
+console.log('1');
+console.log('2');
+console.log('3');
+//complex case
+const one = () => {
+    const two = () => {
+        console.log('4')
+    }
+    two();
+}
+
+//asynchronous 
+console.log('1');
+setTimeout(()=>{console.log('2');}, 2000);
+console.log('3');
+//recursion to recreate stack space
+function foo (){
+    foo()
+}
+//modules
