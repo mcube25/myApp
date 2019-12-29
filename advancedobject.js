@@ -40,7 +40,7 @@ class Wizard extends player{
     }
 }
 const wizard1 = new Wizard("shealer","healer");
-const wizard1 = new Wizard("big","hear");
+const wizard2  = new Wizard("big","hear");
 //pass by value and pass by reference
 var a =5;
 var b = 10;

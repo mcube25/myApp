@@ -2,7 +2,7 @@
                for (let i = 0; i < basket.length; i++){
                    console.log(basket[i]);
                }
-               //can also se the form
+               //can also use the form
                basket.forEach(item => {
                    console.log(item);
                })
@@ -17,4 +17,5 @@
                };
                
                
+
 
